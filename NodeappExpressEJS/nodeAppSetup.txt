@@ -1,0 +1,11 @@
+start new node application by entering from the directory of the app npm init
+after the app was set. Open the package.sjon file and add dependencies if needed:
+		
+  "dependencies": {"express": "*",
+  "ejs": "*"
+  },
+  
+ then from the console enter npm install and this will install the dependencies
+ 
+ create view folder and in it two files: layout.ejs and index.ejs
+ in the app forlder create a file app.js

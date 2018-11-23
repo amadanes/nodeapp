@@ -1,0 +1,23 @@
+{
+  "name": "nodeapp",
+  "version": "0.0.1",
+  "description": "express app with ejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "ejs": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amadanes/nodeapp.git"
+  },
+  "author": "Amos Madanes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amadanes/nodeapp/issues"
+  },
+  "homepage": "https://github.com/amadanes/nodeapp#readme"
+}

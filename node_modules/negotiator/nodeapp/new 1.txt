@@ -1,0 +1,45 @@
+//module dependencies
+var express = require("express");
+var stylus = require("stylus");
+var nib = require("nib");
+
+//port number varialble
+var portnumber = 3000;
+
+//initialize express
+var app = express();
+console.log("Express has been initilized");
+
+//initialize stylus
+function compile(str, path) {
+    return stylus(str)
+    .set('filename', path)
+    .use(nib())
+}
+
+// set view folder
+app.set('view', __dirname+'/views');
+
+//initilize jade
+app.set('view engine', 'jade');
+console.log("Jade initialized");
+
+//stylus middleware
+app.use(express.logger('dev'));
+
+app.use(stylus.middleware(
+
+    { src:__dirname+'/public'
+       , compile: compile
+    }
+))
+app.use(express.static(__dirname + '/public'));
+//render Index Page represended by '/'
+app.get('/', function(req, res){
+    res.render('index',
+    { title : 'Welcome'}
+    )
+})
+
+app.listen(portnumber);
+console.log("server started on port "+portnumber);
